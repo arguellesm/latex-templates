@@ -11,3 +11,4 @@ You first run `:VimtexCompile` and from then on, each `:w` will update the previ
 
 Both *Eggplant* and *Cloud* are assigment/article templates.
 
+![](https://github.com/arguellesm/latex-templates/blob/main/pic.png)
