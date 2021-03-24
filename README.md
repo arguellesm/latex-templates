@@ -1,4 +1,4 @@
-# LaTeX templates
+# LaTeX templates :herb:
 
 A growing collection of LaTeX templates I have created and use frequently. 
 
