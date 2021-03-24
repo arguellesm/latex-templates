@@ -1,0 +1,185 @@
+\documentclass[a4paper,10pt]{article}
+
+% Español
+%\usepackage[spanish,es-noindentfirst]{babel}
+% Geometría
+\usepackage[a4paper,top=45pt,left=120pt]{geometry}
+
+% Paquetes
+\usepackage[T1]{fontenc}        % Codificación 8-bit
+\usepackage[scaled]{helvet}     % Fuente sans serif
+\usepackage[table]{xcolor}      % Color
+\usepackage{listings}           % Bloques de código
+\usepackage[most]{tcolorbox}    % Cuadros para código
+\usepackage{graphicx}           % Imágenes
+\usepackage{titlesec}           % Secciones y subsecciones
+\usepackage{eso-pic}            % Color de fondo
+\usepackage{changepage}         % Márgenes del título
+\usepackage{tabularx}           % Tablas full width
+\usepackage{lipsum}             % Filler text
+
+% Pies de imagen
+\usepackage[font=footnotesize,labelfont={sc},labelsep=period]{caption}
+
+% Colores del documento
+\definecolor{berenjena}{HTML}{825E6A}
+\definecolor{champan}{HTML}{DDC8C4}
+\definecolor{onyx}{HTML}{3D3D3D}
+\definecolor{ceniza}{HTML}{A1A2A6}
+\definecolor{platino}{HTML}{EBEBEB}
+\definecolor{perla}{HTML}{F7F7F7}
+
+% Estilo de los bloques de código
+\lstset{
+    backgroundcolor=\color{perla},
+    basicstyle=\linespread{0.9}\ttfamily\small\color{onyx},
+    commentstyle=\color{ceniza},
+    keywordstyle=\color{berenjena},
+    stringstyle=\color{champan},
+    tabsize=2,
+    breaklines=true,
+    showstringspaces=false,
+    numbers=none,
+}
+
+% Cuadro para los bloques de código
+\newtcblisting{code}[1]{%
+    colframe=perla,
+    colback=perla,
+    arc=1mm,
+    left=3pt,right=0pt,top=-5pt,bottom=-5pt,
+    listing only,
+    listing options={language=#1}
+}
+
+% Fragmentos de código en línea
+\newtcbox{ci}{
+    on line,
+    fontupper=\ttfamily\small,
+    boxsep=1pt,
+    left=0pt,right=0pt,top=0pt,bottom=0pt,
+    colframe=perla,colback=perla,
+    highlight math style={enhanced}
+}
+
+% Título de ejercicio
+\newtcbox{ejer}{
+    sharp corners,
+    fontupper=\sffamily\bfseries\small,
+    boxsep=0pt,
+    colframe=platino, colback=platino,
+    capture=minipage,
+    width=\textwidth
+}
+
+% Formato de párrafos
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.2}
+
+% Formato de secciones y subsecciones {indice}{texto}
+\titleformat{\section}
+    {\color{berenjena}\sffamily\bfseries\fontsize{10}{10}}{\thesection}{1em}{}
+\titleformat{\subsection}
+    {\color{ceniza}\sffamily\fontsize{10}{10}}{\thesubsection}{1em}{}
+
+% Columna con color y ancho 
+\newcolumntype{g}{>{\sffamily}>{\small}>{\columncolor{perla}}>{\hsize=.4\hsize}>{\raggedright}X}
+\newcolumntype{s}{>{\small}>{\hsize=.6\hsize}X}
+
+% Nueva fila y dos líneas
+\def\nr{\\\hline\hline}
+
+% ------------------------------------------------
+% Documento
+% ------------------------------------------------
+
+\begin{document}
+
+% Título
+% ---------
+
+% Bloque de color
+\AddToShipoutPictureBG*{
+    \AtPageUpperLeft{
+        \color{berenjena}
+        \hspace*{-.1\paperwidth}
+        \raisebox{-.24\paperheight}{\rule{1.1\paperwidth}{.24\paperheight}}
+    }
+}
+
+\begin{adjustwidth}{-105pt}{0pt}
+    % Logo e información UGR
+    \begin{minipage}[c]{.22\textwidth}
+    \center
+    {\sffamily{\color{perla} 
+        \includegraphics[scale=.08]{./logo.png}
+        
+        \scriptsize\itshape
+        Long and descriptive college department name
+
+        University of Somewhere
+    }}
+    \end{minipage}
+    % Línea divisora
+    \begin{minipage}[c]{.09\textwidth}
+        \center
+        \color{perla}\rule{1pt}{115pt}
+    \end{minipage}
+    % Título en sí
+    \begin{minipage}[c]{.6\textwidth}
+    \raggedright
+    {\sffamily{\color{perla}
+        {\textsc ASSIGNMENT 1}
+        \vspace{5pt}
+
+        {\Large\textbf{Eggplant: An analysis}}
+        \vspace{10pt}
+
+        \textsc{Vegetables 101}
+        \vspace{1pt}
+
+        \small
+        Jane Doe
+
+        \today
+    }} 
+    \end{minipage}
+\end{adjustwidth}
+
+\arrayrulecolor{white}
+
+% Contenido
+% -----------
+\vspace{100pt}
+
+\section*{Introduction}
+\lipsum[1][1-5]
+
+\section*{Eggplant care}
+
+\ejer{1. Soil}
+\begin{tabularx}{\textwidth}{gs}
+    \lipsum[2][6] & \lipsum[1][6-10] \nr
+    \lipsum[2][8] & \lipsum[2][1] \nr
+\end{tabularx}
+
+\ejer{2. Water}
+\begin{tabularx}{\textwidth}{gs}
+    \lipsum[2][7] & \lipsum[4][1-6] \nr
+    \lipsum[2][10] & \lipsum[3][1-6] \nr
+\end{tabularx}
+
+\ejer{3. Climate}
+\begin{tabularx}{\textwidth}{gs}
+    \lipsum[5][1] & \lipsum[5][3] \nr
+    \lipsum[5][2] & \lipsum[5][4-8] \nr
+\end{tabularx}
+
+
+
+
+
+
+
+\end{document}

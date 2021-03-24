@@ -1,0 +1,116 @@
+\documentclass[a4paper, 10pt]{article}
+
+% Español
+%\usepackage[spanish,es-noindentfirst]{babel} 
+
+% Paquetes
+\usepackage[T1]{fontenc}        % Codificación 8-bit
+\usepackage[scaled]{helvet}     % Fuente sans serif
+\usepackage{xcolor}             % Color
+\usepackage{listings}           % Bloques de código
+\usepackage[most]{tcolorbox}    % Cuadros para código
+\usepackage{graphicx}           % Imágenes
+\usepackage{titlesec}           % Secciones y subsecciones
+\usepackage{lipsum}             % Texto de relleno
+
+% Pies de imagen 
+\usepackage[font=footnotesize,labelfont={sc},labelsep=period]{caption}
+
+% Colores del documento
+\definecolor{cielo}{HTML}{8CA8E3}
+\definecolor{lavanda}{HTML}{9DB5E7}
+\definecolor{carbon}{HTML}{636363}
+\definecolor{perla}{HTML}{F7F7F7}
+\definecolor{ceniza}{HTML}{ADB0B8}
+\definecolor{tormenta}{HTML}{275468}
+\definecolor{manzana}{HTML}{90D585}
+
+% Estilo de los bloques de código
+\lstset{
+    backgroundcolor=\color{perla},
+    basicstyle=\linespread{0.9}\ttfamily\small\color{tormenta},
+    commentstyle=\color{ceniza},
+    keywordstyle=\color{lavanda},
+    stringstyle=\color{manzana},
+    tabsize=2,
+    breaklines=true,
+    showstringspaces=false,
+    numbers=none,
+}
+
+% Cuadro para los bloques de código
+\newtcblisting{code}[1]{%
+    colframe=perla,
+    colback=perla,
+    arc=1mm,
+    left=3pt,right=0pt,top=-5pt,bottom=-5pt,
+    listing only,
+    listing options={language=#1}
+}
+
+% Fragmentos de código en línea
+\newtcbox{ci}{
+    on line,
+    fontupper=\ttfamily\small,
+    boxsep=1pt,
+    left=0pt,right=0pt,top=0pt,bottom=0pt,
+    colframe=perla,colback=perla,  
+    highlight math style={enhanced}
+}
+
+% Formato de párrafos
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.2}
+
+%Formato de secciones y subsecciones {indice}{texto}
+\titleformat{\section}
+    {\color{lavanda}\sffamily\fontsize{10}{10}}{\thesection}{1em}{}
+\titleformat{\subsection}
+    {\color{ceniza}\sffamily\fontsize{10}{10}}{\thesubsection}{1em}{}
+
+
+% ------------------------------------------------
+% Documento
+% ------------------------------------------------
+
+\begin{document}
+
+% Título
+% ---------
+{\parindent0pt
+{\sffamily
+    {\color{cielo}{\Large ASSIGNMENT 1} 
+    \rule[-.2ex]{.25ex}{1.2em}}
+    {\color{lavanda}{\Large Minimal landscaping}}
+
+    {\color{carbon}\footnotesize
+        \textsc{\small Urban environments 101} \vspace{-.3em}
+    
+    Jane Doe \vspace{-1.4em}
+
+    \textit{\today} \vspace{4em}}
+}}
+
+% Contenido
+% -----------
+
+\section*{The sky}
+\lipsum[4]
+
+\begin{code}{Python}
+# Example code
+for l in "cloud":
+    print(l)
+\end{code}
+
+\section*{The ground}
+\lipsum[5][1-5]
+
+\subsection*{Grass}
+\lipsum[6]
+
+\subsection*{Dirt}
+\lipsum[8]
+
+\end{document}
