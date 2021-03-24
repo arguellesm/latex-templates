@@ -1,101 +1,101 @@
 \documentclass[a4paper, 10pt]{article}
 
-% Español
+% Language 
 %\usepackage[spanish,es-noindentfirst]{babel} 
 
-% Paquetes
-\usepackage[T1]{fontenc}        % Codificación 8-bit
-\usepackage[scaled]{helvet}     % Fuente sans serif
+% Packages 
+\usepackage[T1]{fontenc}        % 8-bit 
+\usepackage[scaled]{helvet}     % Sans serif font
 \usepackage{xcolor}             % Color
-\usepackage{listings}           % Bloques de código
-\usepackage[most]{tcolorbox}    % Cuadros para código
-\usepackage{graphicx}           % Imágenes
-\usepackage{titlesec}           % Secciones y subsecciones
-\usepackage{lipsum}             % Texto de relleno
+\usepackage{listings}           % Code snippets
+\usepackage[most]{tcolorbox}    % Boxes
+\usepackage{graphicx}           % Add images
+\usepackage{titlesec}           % Sections and subsections
+\usepackage{lipsum}             % Dummy text
 
-% Pies de imagen 
+% Captions 
 \usepackage[font=footnotesize,labelfont={sc},labelsep=period]{caption}
 
-% Colores del documento
-\definecolor{cielo}{HTML}{8CA8E3}
-\definecolor{lavanda}{HTML}{9DB5E7}
-\definecolor{carbon}{HTML}{636363}
-\definecolor{perla}{HTML}{F7F7F7}
-\definecolor{ceniza}{HTML}{ADB0B8}
-\definecolor{tormenta}{HTML}{275468}
-\definecolor{manzana}{HTML}{90D585}
+% Colors
+\definecolor{sky}{HTML}{8CA8E3}
+\definecolor{lavender}{HTML}{9DB5E7}
+\definecolor{coal}{HTML}{636363}
+\definecolor{pearl}{HTML}{F7F7F7}
+\definecolor{ash}{HTML}{ADB0B8}
+\definecolor{storm}{HTML}{275468}
+\definecolor{apple}{HTML}{90D585}
 
-% Estilo de los bloques de código
+% Code style
 \lstset{
-    backgroundcolor=\color{perla},
-    basicstyle=\linespread{0.9}\ttfamily\small\color{tormenta},
-    commentstyle=\color{ceniza},
-    keywordstyle=\color{lavanda},
-    stringstyle=\color{manzana},
+    backgroundcolor=\color{pearl},
+    basicstyle=\linespread{0.9}\ttfamily\small\color{storm},
+    commentstyle=\color{ash},
+    keywordstyle=\color{lavender},
+    stringstyle=\color{apple},
     tabsize=2,
     breaklines=true,
     showstringspaces=false,
     numbers=none,
 }
 
-% Cuadro para los bloques de código
+% Box for code snippets
 \newtcblisting{code}[1]{%
-    colframe=perla,
-    colback=perla,
+    colframe=pearl,
+    colback=pearl,
     arc=1mm,
     left=3pt,right=0pt,top=-5pt,bottom=-5pt,
     listing only,
     listing options={language=#1}
 }
 
-% Fragmentos de código en línea
+% Inline code fragments
 \newtcbox{ci}{
     on line,
     fontupper=\ttfamily\small,
     boxsep=1pt,
     left=0pt,right=0pt,top=0pt,bottom=0pt,
-    colframe=perla,colback=perla,  
+    colframe=pearl,colback=pearl,  
     highlight math style={enhanced}
 }
 
-% Formato de párrafos
+% Paragraph format
 \setlength{\parindent}{1.5em}
 \setlength{\parskip}{1em}
 \renewcommand{\baselinestretch}{1.2}
 
-%Formato de secciones y subsecciones {indice}{texto}
+% Section and subsection format
 \titleformat{\section}
-    {\color{lavanda}\sffamily\fontsize{10}{10}}{\thesection}{1em}{}
+    {\color{lavender}\sffamily\fontsize{10}{10}}{\thesection}{1em}{}
 \titleformat{\subsection}
-    {\color{ceniza}\sffamily\fontsize{10}{10}}{\thesubsection}{1em}{}
+    {\color{ash}\sffamily\fontsize{10}{10}}{\thesubsection}{1em}{}
 
 
 % ------------------------------------------------
-% Documento
+% Document
 % ------------------------------------------------
 
 \begin{document}
 
-% Título
+% Title
 % ---------
 {\parindent0pt
 {\sffamily
-    {\color{cielo}{\Large ASSIGNMENT 1} 
+    {\color{sky}{\Large ASSIGNMENT 1} 
     \rule[-.2ex]{.25ex}{1.2em}}
-    {\color{lavanda}{\Large Minimal landscaping}}
+    {\color{lavender}{\Large Cloud anatomy}}
 
-    {\color{carbon}\footnotesize
-        \textsc{\small Urban environments 101} \vspace{-.3em}
+    {\color{coal}\footnotesize
+        \textsc{\small Sky landscaping 101} \vspace{-.3em}
     
     Jane Doe \vspace{-1.4em}
 
     \textit{\today} \vspace{4em}}
 }}
 
-% Contenido
+% Body
 % -----------
 
-\section*{The sky}
+\section*{The fluff}
 \lipsum[4]
 
 \begin{code}{Python}
@@ -104,13 +104,13 @@ for l in "cloud":
     print(l)
 \end{code}
 
-\section*{The ground}
+\section*{Colors of cloud}
 \lipsum[5][1-5]
 
-\subsection*{Grass}
+\subsection*{The whiteness}
 \lipsum[6]
 
-\subsection*{Dirt}
+\subsection*{The stormyness}
 \lipsum[8]
 
 \end{document}
