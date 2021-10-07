@@ -11,4 +11,8 @@ You first run `:VimtexCompile` and from then on, each `:w` will update the previ
 
 Both *Eggplant* and *Cloud* are assigment/article templates.
 
-![](https://github.com/arguellesm/latex-templates/blob/main/pic.png)
+![](https://github.com/arguellesm/latex-templates/blob/main/pics/eggplant-cloud.png)
+
+*Less* is a minimal template meant for simple documents.
+
+![](https://github.com/arguellesm/latex-templates/blob/main/pics/less.png)
